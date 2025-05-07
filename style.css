@@ -1,0 +1,133 @@
+/* Fonts and base reset */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;600&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Background with cool mountain image */
+body {
+  font-family: 'Outfit', sans-serif;
+  background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Main container with minimized size */
+.container {
+  background: linear-gradient(to bottom right, rgba(135, 206, 250, 0.2), rgba(173, 216, 230, 0.2));
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  padding: 20px; /* Reduced padding */
+  width: 90%; /* Reduced width */
+  max-width: 800px; /* Reduced max-width */
+  color: #fff;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* Slightly smaller shadow */
+  animation: fadeInUp 1s ease-in-out;
+  text-align: center;
+  overflow: auto; /* Ensure content doesn't overflow */
+}
+
+/* Header */
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #ffffff;
+  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.6);
+}
+
+/* Weather card */
+.weather-card {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+  padding: 25px;
+  margin: 20px 0;
+  box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+.weather-card:hover {
+  transform: scale(1.02);
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Animated weather icon */
+.weather-icon {
+  font-size: 50px;
+  color: #00c3ff;
+  margin-bottom: 10px;
+}
+.animated-icon {
+  animation: pulse 2s infinite ease-in-out;
+}
+
+/* Info */
+.weather-info h2 {
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+}
+.weather-info p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+/* Forecast styles */
+.forecast {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+.forecast-day {
+  flex: 1 1 30%;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+  padding: 15px;
+  margin-top: 10px;
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+}
+.forecast-day:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-5px);
+}
+.forecast-day i {
+  font-size: 30px;
+  color: #00d4ff;
+  margin-bottom: 8px;
+}
+
+/* Fade-in animation */
+@keyframes fadeInUp {
+  from {
+    transform: translateY(40px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Pulse animation */
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+/* Responsive for mobile */
+@media screen and (max-width: 600px) {
+  .forecast {
+    flex-direction: column;
+    align-items: center;
+  }
+}
