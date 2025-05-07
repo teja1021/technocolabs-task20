@@ -1,3 +1,10 @@
+
+
+
+//sorry, still wroking on js part 
+
+
+
 // Foursquare API Info
 const clientId = 'your-client-id';
 const clientSecret = 'your-client-secret';
